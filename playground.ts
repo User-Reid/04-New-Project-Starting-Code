@@ -46,3 +46,15 @@ let banana: AppAdmin = {
 let paon: Admin = {
   permissions: "poop",
 };
+
+type Roles = {
+  admin: string;
+  user: string;
+  editor: string;
+};
+
+function performAction(action: string | number, role: Roles) {
+  if (role === "admin" && typeof action === "string") {
+    // ...
+  }
+}

@@ -66,3 +66,34 @@ function combine(a: string | number, b: string | number): string | number {
 
   return `${a}${b}`;
 }
+
+let roles: Array<Roles>;
+roles = ["admin", "editor"];
+
+type DataStorage<T> = {
+  storage: T[];
+  add: (data: T) => void;
+};
+
+function handleAdd(x: string) {
+  console.log(x);
+}
+
+const textStorage: DataStorage<string> = {
+  storage: ["salsa", "pudding"],
+  add: handleAdd,
+};
+
+const userStorage: DataStorage<AppUser> = {
+  storage: [],
+  handleAdd(x) {},
+};
+
+function merge<T, U>(a: T, b: U) {
+  return {
+    ...a,
+    ...b,
+  };
+}
+
+const poop = merge({ a: "banana" }, { b: 24 });

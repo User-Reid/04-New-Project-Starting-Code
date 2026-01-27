@@ -58,3 +58,11 @@ function performAction(action: string | number, role: Roles) {
     // ...
   }
 }
+
+function combine(a: string | number, b: string | number): string | number {
+  if (typeof a === "number" && typeof b === "number") {
+    return a + b;
+  }
+
+  return `${a}${b}`;
+}
